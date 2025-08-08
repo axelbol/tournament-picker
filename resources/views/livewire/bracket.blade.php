@@ -1,9 +1,16 @@
 <div>
-    <div class="min-h-screen bg-gray-900 text-white p-8" wire:loading.class="opacity-50" wire:target="selectWinner">
+    <div
+        class="min-h-screen bg-gray-900 text-white p-8"
+        wire:loading.class="opacity-50"
+        wire:target="selectWinner"
+    >
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-8">
                 <h1 class="text-4xl font-bold mb-4">Tournament Bracket</h1>
-                <button wire:click="resetBracket" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded font-semibold transition-colors">
+                <button
+                    class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded font-semibold transition-colors"
+                    wire:click="resetBracket"
+                >
                     Reset Bracket
                 </button>
             </div>
@@ -14,16 +21,21 @@
                         <h2 class="text-2xl font-bold">🏆 CHAMPION</h2>
                         <div class="flex items-center justify-center space-x-3 mt-2">
                             <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                                <img src="{{ asset($this->getTeamById($winner)['logo']) }}"
+                                <img
+                                    src="{{ asset($this->getTeamById($winner)['logo']) }}"
                                     alt="{{ $this->getTeamById($winner)['name'] }}"
-                                    class="w-10 h-10 object-contain">
+                                    class="w-10 h-10 object-contain"
+                                >
                             </div>
                             <p class="text-xl font-bold">{{ $this->getTeamById($winner)['name'] }}</p>
                         </div>
                         {{-- <p class="text-xl">{{ $this->getTeamById($winner)['name'] }}</p> --}}
                     </div>
                     <div class="mt-4">
-                        <button onclick="downloadBracket()" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg">
+                        <button
+                            class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg"
+                            onclick="downloadBracket()"
+                        >
                             📸 Download Bracket
                         </button>
                     </div>
@@ -31,7 +43,10 @@
             @endif
 
             <!-- Loading indicator -->
-            <div wire:loading wire:target="selectWinner" class="fixed top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+            <div
+                class="fixed top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg z-50"
+                wire:loading wire:target="selectWinner"
+            >
                 <div class="flex items-center space-x-2">
                     <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     <span>Updating bracket...</span>
@@ -40,7 +55,6 @@
 
             <div class="bracket-container overflow-x-auto" id="bracket-content">
                 <div class="flex justify-center space-x-12 min-w-max relative">
-
                     <!-- Round of 16 -->
                     <div class="flex flex-col justify-center space-y-6">
                         <h3 class="text-lg font-semibold text-center mb-4">Round of 16</h3>
@@ -48,17 +62,20 @@
                             <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 transition-all duration-200 hover:border-gray-600">
                                 <div class="space-y-2">
                                     <!-- Team 1 -->
-                                    <div class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105
-                                        {{ $match['winner'] == $match['team1'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                    <div
+                                        class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team1'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                         wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team1'] }}, 'round16')" wire:loading.attr="disabled"
                                         wire:loading.class="opacity-50 cursor-not-allowed"
-                                        wire:target="selectWinner">
+                                        wire:target="selectWinner"
+                                    >
                                         {{-- <span class="font-semibold">{{ $this->getTeamById($match['team1'])['code'] }}</span> --}}
                                         <div class="flex items-center space-x-2">
                                             <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                                                <img src="{{ asset($this->getTeamById($match['team1'])['logo']) }}"
-                                                        alt="{{ $this->getTeamById($match['team1'])['name'] }}"
-                                                        class="w-6 h-6 object-contain">
+                                                <img
+                                                    class="w-6 h-6 object-contain"
+                                                    src="{{ asset($this->getTeamById($match['team1'])['logo']) }}"
+                                                    alt="{{ $this->getTeamById($match['team1'])['name'] }}"
+                                                >
                                             </div>
                                             <span class="font-semibold text-sm">{{ $this->getTeamById($match['team1'])['code'] }}</span>
                                         </div>
@@ -68,15 +85,20 @@
                                     </div>
 
                                     <!-- Team 2 -->
-                                    <div class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105
-                                        {{ $match['winner'] == $match['team2'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                    <div
+                                        class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team2'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                         wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team2'] }}, 'round16')" wire:loading.attr="disabled"
                                         wire:loading.class="opacity-50 cursor-not-allowed"
-                                        wire:target="selectWinner">
+                                        wire:target="selectWinner"
+                                    >
                                         {{-- <span class="font-semibold">{{ $this->getTeamById($match['team2'])['code'] }}</span> --}}
                                         <div class="flex items-center space-x-2">
                                             <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                                                <img src="{{ asset($this->getTeamById($match['team2'])['logo']) }}" alt="{{ $this->getTeamById($match['team2'])['name'] }}" class="w-6 h-6 object-contain">
+                                                <img
+                                                    class="w-6 h-6 object-contain"
+                                                    src="{{ asset($this->getTeamById($match['team2'])['logo']) }}"
+                                                    alt="{{ $this->getTeamById($match['team2'])['name'] }}"
+                                                >
                                             </div>
                                             <span class="font-semibold text-sm">{{ $this->getTeamById($match['team2'])['code'] }}</span>
                                         </div>
@@ -97,17 +119,20 @@
                                 <div class="space-y-2">
                                     <!-- Team 1 Slot -->
                                     @if($match['team1'])
-                                        <div class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105
-                                            {{ $match['winner'] == $match['team1'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                        <div
+                                            class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team1'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                             wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team1'] }}, 'quarter')" wire:loading.attr="disabled"
                                             wire:loading.class="opacity-50 cursor-not-allowed"
-                                            wire:target="selectWinner">
+                                            wire:target="selectWinner"
+                                        >
                                             {{-- <span class="font-semibold">{{ $this->getTeamById($match['team1'])['code'] }}</span> --}}
                                             <div class="flex items-center space-x-2">
                                                 <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                                                    <img src="{{ asset($this->getTeamById($match['team1'])['logo']) }}"
+                                                    <img
+                                                        class="w-6 h-6 object-contain"
+                                                        src="{{ asset($this->getTeamById($match['team1'])['logo']) }}"
                                                         alt="{{ $this->getTeamById($match['team1'])['name'] }}"
-                                                        class="w-6 h-6 object-contain">
+                                                    >
                                                 </div>
                                                 <span class="font-semibold text-sm">{{ $this->getTeamById($match['team1'])['code'] }}</span>
                                             </div>
@@ -123,17 +148,20 @@
 
                                     <!-- Team 2 Slot -->
                                     @if($match['team2'])
-                                        <div class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105
-                                            {{ $match['winner'] == $match['team2'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                        <div
+                                            class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team2'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                             wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team2'] }}, 'quarter')" wire:loading.attr="disabled"
                                             wire:loading.class="opacity-50 cursor-not-allowed"
-                                            wire:target="selectWinner">
+                                            wire:target="selectWinner"
+                                        >
                                             {{-- <span class="font-semibold">{{ $this->getTeamById($match['team2'])['code'] }}</span> --}}
                                             <div class="flex items-center space-x-2">
                                                 <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                                                    <img src="{{ asset($this->getTeamById($match['team2'])['logo']) }}"
+                                                    <img
+                                                        class="w-6 h-6 object-contain"
+                                                        src="{{ asset($this->getTeamById($match['team2'])['logo']) }}"
                                                         alt="{{ $this->getTeamById($match['team2'])['name'] }}"
-                                                        class="w-6 h-6 object-contain">
+                                                    >
                                                 </div>
                                                 <span class="font-semibold text-sm">{{ $this->getTeamById($match['team2'])['code'] }}</span>
                                             </div>
@@ -159,17 +187,20 @@
                                 <div class="space-y-2">
                                     <!-- Team 1 Slot -->
                                     @if($match['team1'])
-                                        <div class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105
-                                            {{ $match['winner'] == $match['team1'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                        <div
+                                            class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team1'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                             wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team1'] }}, 'semi')" wire:loading.attr="disabled"
                                             wire:loading.class="opacity-50 cursor-not-allowed"
-                                            wire:target="selectWinner">
+                                            wire:target="selectWinner"
+                                        >
                                             {{-- <span class="font-semibold">{{ $this->getTeamById($match['team1'])['code'] }}</span> --}}
                                             <div class="flex items-center space-x-2">
                                                 <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                                                    <img src="{{ asset($this->getTeamById($match['team1'])['logo']) }}"
+                                                    <img
+                                                        class="w-6 h-6 object-contain"
+                                                        src="{{ asset($this->getTeamById($match['team1'])['logo']) }}"
                                                         alt="{{ $this->getTeamById($match['team1'])['name'] }}"
-                                                        class="w-6 h-6 object-contain">
+                                                    >
                                                 </div>
                                                 <span class="font-semibold text-sm">{{ $this->getTeamById($match['team1'])['code'] }}</span>
                                             </div>
@@ -185,17 +216,20 @@
 
                                     <!-- Team 2 Slot -->
                                     @if($match['team2'])
-                                        <div class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105
-                                            {{ $match['winner'] == $match['team2'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                        <div
+                                            class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team2'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                             wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team2'] }}, 'semi')" wire:loading.attr="disabled"
                                             wire:loading.class="opacity-50 cursor-not-allowed"
-                                            wire:target="selectWinner">
+                                            wire:target="selectWinner"
+                                        >
                                             {{-- <span class="font-semibold">{{ $this->getTeamById($match['team2'])['code'] }}</span> --}}
                                             <div class="flex items-center space-x-2">
                                                 <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                                                    <img src="{{ asset($this->getTeamById($match['team2'])['logo']) }}"
+                                                    <img
+                                                        class="w-6 h-6 object-contain"
+                                                        src="{{ asset($this->getTeamById($match['team2'])['logo']) }}"
                                                         alt="{{ $this->getTeamById($match['team2'])['name'] }}"
-                                                        class="w-6 h-6 object-contain">
+                                                    >
                                                 </div>
                                                 <span class="font-semibold text-sm">{{ $this->getTeamById($match['team2'])['code'] }}</span>
                                             </div>
@@ -221,17 +255,20 @@
                                 <div class="space-y-2">
                                     <!-- Team 1 Slot -->
                                     @if($match['team1'])
-                                        <div class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105
-                                            {{ $match['winner'] == $match['team1'] ? 'bg-yellow-600 text-black shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                        <div
+                                            class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team1'] ? 'bg-yellow-600 text-black shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                             wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team1'] }}, 'final')" wire:loading.attr="disabled"
                                             wire:loading.class="opacity-50 cursor-not-allowed"
-                                            wire:target="selectWinner">
+                                            wire:target="selectWinner"
+                                        >
                                             {{-- <span class="font-semibold">{{ $this->getTeamById($match['team1'])['code'] }}</span> --}}
                                             <div class="flex items-center space-x-2">
                                                 <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                                                    <img src="{{ asset($this->getTeamById($match['team1'])['logo']) }}"
+                                                    <img
+                                                        class="w-6 h-6 object-contain"
+                                                        src="{{ asset($this->getTeamById($match['team1'])['logo']) }}"
                                                         alt="{{ $this->getTeamById($match['team1'])['name'] }}"
-                                                        class="w-6 h-6 object-contain">
+                                                    >
                                                 </div>
                                                 <span class="font-semibold text-sm">{{ $this->getTeamById($match['team1'])['code'] }}</span>
                                             </div>
@@ -247,17 +284,20 @@
 
                                     <!-- Team 2 Slot -->
                                     @if($match['team2'])
-                                        <div class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105
-                                            {{ $match['winner'] == $match['team2'] ? 'bg-yellow-600 text-black shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                        <div
+                                            class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team2'] ? 'bg-yellow-600 text-black shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                             wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team2'] }}, 'final')" wire:loading.attr="disabled"
                                             wire:loading.class="opacity-50 cursor-not-allowed"
-                                            wire:target="selectWinner">
+                                            wire:target="selectWinner"
+                                        >
                                             {{-- <span class="font-semibold">{{ $this->getTeamById($match['team2'])['code'] }}</span> --}}
                                             <div class="flex items-center space-x-2">
                                                 <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                                                    <img src="{{ asset($this->getTeamById($match['team2'])['logo']) }}"
+                                                    <img
+                                                        class="w-6 h-6 object-contain"
+                                                        src="{{ asset($this->getTeamById($match['team2'])['logo']) }}"
                                                         alt="{{ $this->getTeamById($match['team2'])['name'] }}"
-                                                        class="w-6 h-6 object-contain">
+                                                    >
                                                 </div>
                                                 <span class="font-semibold text-sm">{{ $this->getTeamById($match['team2'])['code'] }}</span>
                                             </div>

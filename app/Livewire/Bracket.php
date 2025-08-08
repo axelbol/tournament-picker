@@ -133,10 +133,6 @@ class Bracket extends Component
         }
         return $this->teamCache[$teamId];
     }
-    // public function getTeamById($teamId)
-    // {
-    //     return collect($this->teams)->firstWhere('id', $teamId);
-    // }
 
     public function resetBracket()
     {

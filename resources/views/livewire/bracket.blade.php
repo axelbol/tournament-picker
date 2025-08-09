@@ -63,7 +63,7 @@
                                 <div class="space-y-2">
                                     <!-- Team 1 -->
                                     <div
-                                        class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team1'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                        class="team-logo flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team1'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                         wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team1'] }}, 'round16')" wire:loading.attr="disabled"
                                         wire:loading.class="opacity-50 cursor-not-allowed"
                                         wire:target="selectWinner"
@@ -86,7 +86,7 @@
 
                                     <!-- Team 2 -->
                                     <div
-                                        class="flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team2'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
+                                        class="team-logo flex items-center justify-between p-2 rounded cursor-pointer transition-all duration-150 transform hover:scale-105 {{ $match['winner'] == $match['team2'] ? 'bg-green-600 shadow-lg' : 'bg-gray-700 hover:bg-gray-600' }}"
                                         wire:click="selectWinner({{ $match['match_id'] }}, {{ $match['team2'] }}, 'round16')" wire:loading.attr="disabled"
                                         wire:loading.class="opacity-50 cursor-not-allowed"
                                         wire:target="selectWinner"

@@ -23,8 +23,8 @@
         </a>
         <div class="flex items-center">
             <ul class="flex space-x-8">
-                <li><a href="#" class="hover:text-green-400 font-extrabold text-lg">Libertadores</a></li>
-                <li><a href="#" class="hover:text-green-400 font-extrabold text-lg">Sudamericana</a></li>
+                <li><a href="{{ route('libertadores') }}" class="hover:text-green-400 font-extrabold text-lg">Libertadores</a></li>
+                <li><a href="{{ route('sudamericana') }}" class="hover:text-green-400 font-extrabold text-lg">Sudamericana</a></li>
             </ul>
         </div>
     </header>

@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/libertadores', function () {
     return view('libertadores');
-});
+})->name('libertadores');
 
 Route::get('/sudamericana', function () {
     return view('sud');
-});
+})->name('sudamericana');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

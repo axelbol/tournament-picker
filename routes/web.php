@@ -3,8 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/libertadores', function () {
+    return view('libertadores');
+});
+
+Route::get('/sudamericana', function () {
+    return view('sudamericana');
 });
 
 Route::get('/dashboard', function () {

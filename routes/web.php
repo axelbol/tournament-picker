@@ -8,7 +8,7 @@ Route::get('/libertadores', function () {
 });
 
 Route::get('/sudamericana', function () {
-    return view('sudamericana');
+    return view('sud');
 });
 
 Route::get('/dashboard', function () {

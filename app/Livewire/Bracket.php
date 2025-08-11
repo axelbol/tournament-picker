@@ -21,22 +21,22 @@ class Bracket extends Component
         // Initialize teams for Round of 16
         $this->teams = [
             // Round of 16 teams (8 matches)
-            ['id' => 1, 'name' => 'INT', 'code' => 'INT', 'logo' => 'img/logos/al_ahly.png', 'eliminated' => false],
-            ['id' => 2, 'name' => 'FLU', 'code' => 'FLU', 'logo' => 'img/logos/fluminense.png', 'eliminated' => false],
-            ['id' => 3, 'name' => 'MCI', 'code' => 'MCI', 'logo' => 'img/logos/man_city.png', 'eliminated' => false],
-            ['id' => 4, 'name' => 'HIL', 'code' => 'HIL', 'logo' => 'img/logos/hilal.png', 'eliminated' => false],
-            ['id' => 5, 'name' => 'SEP', 'code' => 'SEP', 'logo' => 'img/logos/sepahan.png', 'eliminated' => false],
-            ['id' => 6, 'name' => 'BOT', 'code' => 'BOT', 'logo' => 'img/logos/botafogo.png', 'eliminated' => false],
-            ['id' => 7, 'name' => 'SLB', 'code' => 'SLB', 'logo' => 'img/logos/benfica.png', 'eliminated' => false],
-            ['id' => 8, 'name' => 'CHE', 'code' => 'CHE', 'logo' => 'img/logos/chelsea.png', 'eliminated' => false],
-            ['id' => 9, 'name' => 'PSG', 'code' => 'PSG', 'logo' => 'img/logos/psg.png', 'eliminated' => false],
-            ['id' => 10, 'name' => 'BAY', 'code' => 'BAY', 'logo' => 'img/logos/bayern.png', 'eliminated' => false],
-            ['id' => 11, 'name' => 'FLA', 'code' => 'FLA', 'logo' => 'img/logos/flamengo.png', 'eliminated' => false],
-            ['id' => 12, 'name' => 'BAY2', 'code' => 'BAY2', 'logo' => 'img/logos/bayer_leverkusen.png', 'eliminated' => false],
-            ['id' => 13, 'name' => 'RMA', 'code' => 'RMA', 'logo' => 'img/logos/real_madrid.png', 'eliminated' => false],
-            ['id' => 14, 'name' => 'JUV', 'code' => 'JUV', 'logo' => 'img/logos/juventus.png', 'eliminated' => false],
-            ['id' => 15, 'name' => 'BVB', 'code' => 'BVB', 'logo' => 'img/logos/dortmund.png', 'eliminated' => false],
-            ['id' => 16, 'name' => 'CFM', 'code' => 'CFM', 'logo' => 'img/logos/club_de_futbol_monterrey.png', 'eliminated' => false],
+            ['id' => 1, 'name' => 'BOT', 'code' => 'BOT', 'logo' => 'img/logos/lib/botafogo.png', 'eliminated' => false],
+            ['id' => 2, 'name' => 'LDQ', 'code' => 'LDQ', 'logo' => 'img/logos/lib/ligadequito.png', 'eliminated' => false],
+            ['id' => 3, 'name' => 'NAC', 'code' => 'NAC', 'logo' => 'img/logos/lib/atlnacional.png', 'eliminated' => false],
+            ['id' => 4, 'name' => 'SAO', 'code' => 'SAO', 'logo' => 'img/logos/lib/saopaulo.png', 'eliminated' => false],
+            ['id' => 5, 'name' => 'LIB', 'code' => 'LIB', 'logo' => 'img/logos/lib/libertad.png', 'eliminated' => false],
+            ['id' => 6, 'name' => 'RIV', 'code' => 'RIV', 'logo' => 'img/logos/lib/river.png', 'eliminated' => false],
+            ['id' => 7, 'name' => 'UNI', 'code' => 'UNI', 'logo' => 'img/logos/lib/universitario.png', 'eliminated' => false],
+            ['id' => 8, 'name' => 'PAL', 'code' => 'PAL', 'logo' => 'img/logos/lib/palmeiras.png', 'eliminated' => false],
+            ['id' => 9, 'name' => 'PEN', 'code' => 'PEN', 'logo' => 'img/logos/lib/penarol.png', 'eliminated' => false],
+            ['id' => 10, 'name' => 'RAC', 'code' => 'RAC', 'logo' => 'img/logos/lib/racing.png', 'eliminated' => false],
+            ['id' => 11, 'name' => 'FOR', 'code' => 'FOR', 'logo' => 'img/logos/lib/fortaleza.png', 'eliminated' => false],
+            ['id' => 12, 'name' => 'VEL', 'code' => 'VEL', 'logo' => 'img/logos/lib/velez.png', 'eliminated' => false],
+            ['id' => 13, 'name' => 'CPO', 'code' => 'CPO', 'logo' => 'img/logos/lib/cerroporteno.png', 'eliminated' => false],
+            ['id' => 14, 'name' => 'EST', 'code' => 'EST', 'logo' => 'img/logos/lib/estudiantes.png', 'eliminated' => false],
+            ['id' => 15, 'name' => 'FLA', 'code' => 'FLA', 'logo' => 'img/logos/lib/flamengo.png', 'eliminated' => false],
+            ['id' => 16, 'name' => 'INT', 'code' => 'INT', 'logo' => 'img/logos/lib/internacional.png', 'eliminated' => false],
         ];
 
         $this->rounds = [
